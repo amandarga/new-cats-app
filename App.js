@@ -13,14 +13,13 @@ import axios from 'axios';
 
 export default function App() {
   const [cats, setCats] = useState([]);
-  const [favorites, setFavorites] = useState([]); // Armazena imagens favoritas
+  const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Função para buscar imagens de gatos
   const fetchCats = async () => {
     try {
       const response = await axios.get('https://api.thecatapi.com/v1/images/search?limit=10');
-      setCats((prevCats) => [...prevCats, ...response.data]); // Adiciona novas imagens à lista existente
+      setCats((prevCats) => [...prevCats, ...response.data]);
       setLoading(false);
     } catch (error) {
       console.error('Erro ao buscar dados da API:', error);
@@ -32,20 +31,18 @@ export default function App() {
     fetchCats();
   }, []);
 
-  // Função para alternar favoritos
+
   const toggleFavorite = (cat) => {
     if (favorites.some((fav) => fav.id === cat.id)) {
-      // Remove dos favoritos se já estiver
       setFavorites((prevFavorites) => prevFavorites.filter((fav) => fav.id !== cat.id));
     } else {
-      // Adiciona aos favoritos
       setFavorites((prevFavorites) => [...prevFavorites, cat]);
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Imagens de Gatos 🐱</Text>
+      <Text style={styles.title}>🐱 Gatos Perfeitos 🐱</Text>
       <Text style={styles.subtitle}>Favoritos: {favorites.length}</Text>
 
       {loading ? (
@@ -78,7 +75,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f4f4f8',
-    padding: 20,
+    padding: 30,
   },
   title: {
     fontSize: 24,

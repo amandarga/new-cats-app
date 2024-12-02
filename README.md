@@ -22,3 +22,29 @@ Este é um aplicativo simples desenvolvido com **React Native** e **Expo** que e
    ```bash
    git clone https://github.com/seu-usuario/cat-images-app.git
    cd cat-images-app
+
+2. Clone o repositório:
+
+   ```bash
+   npm install
+
+3. Inicie o app:
+   
+    ```bash
+   npx expo start
+    
+4. Use o app no seu dispositivo físico ou emulador com o Expo Go.
+
+## Uso
+
+1. Abra o app.
+2. Veja as imagens de gatos carregadas automaticamente.
+3. Clique no botão "Carregar Mais Imagens" para adicionar mais imagens.
+4. Clique em uma imagem para favoritá-la (borda laranja) ou remover dos favoritos.
+
+## Tecnologias
+
+- React Native
+- Expo
+- Axios
+- The Cat API
